@@ -1,5 +1,5 @@
 # LRBaseDbi
-DBI to construct LRBase package from sqlite file.
+DBI to construct R LRBase package from sqlite file.
 
 Installation
 ======
