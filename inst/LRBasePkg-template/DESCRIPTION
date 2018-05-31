@@ -4,7 +4,7 @@ Description: @PKGDESCRIPTION@
 Version: @PKGVERSION@
 Author: @AUTHOR@
 Maintainer: @MAINTAINER@
-Depends: R (>= 3.4.0), RSQLite, LRBaseDbi
+Depends: R (>= 3.4.0), LRBaseDbi
 Suggests: RUnit, BiocGenerics
 License: @LIC@
 organism: @ORGANISM@
