@@ -63,7 +63,8 @@ makeLRBasePackage <- function(pkgname, data, metadata, organism, version,
         to = paste0(destDir, "/", pkgname, "/inst/doc/", pkgname, ".pdf"),
         overwrite=TRUE)
 
-    template_rnw <- paste0(system.file("doc", package = "LRBaseDbi"),
+    template_rnw <- paste0(
+        system.file("doc", package = "LRBaseDbi"),
         "/LRBaseDbi.Rnw")
     new_rnw <- unlist(read.delim(template_rnw, header=FALSE))
     new_rnw <- gsub("LRBaseDbi", pkgname, new_rnw)

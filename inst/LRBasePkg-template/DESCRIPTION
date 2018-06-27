@@ -8,4 +8,4 @@ Depends: R (>= 3.5.0), LRBaseDbi
 Imports: RSQLite
 Suggests: RUnit, BiocGenerics
 License: @LIC@
-biocViews: AnnotationData, LRBaseDb
+biocViews: AnnotationData, FunctionalAnnotation
