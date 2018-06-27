@@ -4,9 +4,8 @@ Description: @PKGDESCRIPTION@
 Version: @PKGVERSION@
 Author: @AUTHOR@
 Maintainer: @MAINTAINER@
-Depends: R (>= 3.4.0), LRBaseDbi
+Depends: R (>= 3.5.0), LRBaseDbi
+Imports: RSQLite
 Suggests: RUnit, BiocGenerics
 License: @LIC@
-organism: @ORGANISM@
-species: @ORGANISM@
-biocViews: Annotation, AnnotationData, Infrastructure, @ORGANISMBIOCVIEW@
+biocViews: AnnotationData, LRBaseDb

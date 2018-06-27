@@ -1,1 +1,2 @@
 import(LRBaseDbi)
+importFrom(RSQLite, SQLite, dbConnect, dbWriteTable, dbDisconnect)

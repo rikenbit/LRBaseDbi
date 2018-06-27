@@ -1,10 +1,11 @@
 Package: LRBaseDbi
-Title: DBI to construct LRBase-related package from sqlite file
-Description: The package is interface to construct LRBase package (LRBase.XXX.eg.db). loadLRBaseDbiPkg import sqlite file and generate LRBase.XXX.eg.db.
+Title: DBI to construct LRBase-related package
+Description: Interface to construct LRBase package (LRBase.XXX.eg.db).
 Version: 0.99.0
 Author: Koki Tsuyuzaki
 Maintainer: Koki Tsuyuzaki <k.t.the-answer@hotmail.co.jp>
-Depends: R (>= 3.4.0), BiocGenerics
-Imports: methods, AnnotationDbi, RSQLite, Biobase
-Suggests: RUnit
+Depends: R (>= 3.5.0)
+Imports: methods, stats, utils, AnnotationDbi, RSQLite, DBI, Biobase
+Suggests: RUnit, BiocGenerics
+biocViews: Infrastructure
 License: Artistic-2.0

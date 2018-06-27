@@ -9,7 +9,7 @@
 \usepackage[numbers]{natbib}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\SweaveOpts{keep.source=FALSE,eps=FALSE,pdf=TRUE,png=TRUE,include=FALSE,concordance=TRUE}
+\SweaveOpts{keep.source=FALSE,pdf=TRUE,png=TRUE,include=FALSE,concordance=TRUE}
 \usepackage{hyperref,url}
 \usepackage[utf8]{inputenc}
 \usepackage{comment}
@@ -30,7 +30,8 @@
 \maketitle
 \begin{center}
 \noindent
-$^1$Laboratory for Bioinformatics Research, RIKEN Center for Biosystems Dynamics Research, Japan\\
+$^1$Laboratory for Bioinformatics Research, RIKEN Center for Biosystems
+Dynamics Research, Japan\\
 \noindent
 \end{center}
 
@@ -40,7 +41,8 @@ $^1$Laboratory for Bioinformatics Research, RIKEN Center for Biosystems Dynamics
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\clearpage
-Description for any LRBase-related packages is written in the vignette of \Rpackage{scTensor} package.
+Description for any LRBase-related packages is written in the vignette of
+\Rpackage{scTensor} package.
 
 \noindent
 Please follow the link below

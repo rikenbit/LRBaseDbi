@@ -13,8 +13,10 @@
 \arguments{
 \item{x}{\code{LRBaseDb} object such as \code{LRBase.Mmu.eg.db}}
 }
+\value{
+The version of LR database
+}
 \author{Koki Tsuyuzaki}
 \examples{
-# library("LRBase.Mmu.eg.db")
-# lrVersion(LRBase.Mmu.eg.db)
+showMethods("lrVersion")
 }

@@ -1,18 +1,20 @@
 import(methods)
-import(BiocGenerics)
-import(RSQLite)
 import(Biobase)
 
-importFrom("stats", "na.omit")
+importFrom(utils, read.delim)
+importFrom(stats, na.omit)
+importFrom(RSQLite, SQLite, dbConnect, dbWriteTable, dbDisconnect)
 
-importClassesFrom("AnnotationDbi", AnnotationDb)
+importClassesFrom(AnnotationDbi, AnnotationDb)
 
-importMethodsFrom("RSQLite", dbGetQuery)
-importMethodsFrom("AnnotationDbi", columns, keytypes, keys, select, dbconn, dbfile, dbschema, dbInfo, species)
-
-exportClasses("LRBaseDb")
-
-exportMethods("columns", "keytypes", "keys", "select", "dbconn", "dbfile", "dbschema", "dbInfo", "species", "packageName", "nomenclature", "listDatabases", "lrVersion")
+importMethodsFrom(DBI, dbGetQuery)
+importMethodsFrom(AnnotationDbi, columns, keytypes, keys, select,
+    dbconn, dbfile, dbschema, dbInfo, species)
 
 export(makeLRBasePackage)
 export(LRBaseDb)
+
+exportClasses(LRBaseDb)
+
+exportMethods(columns, keytypes, keys, select, dbconn, dbfile, dbschema,
+    dbInfo, species, packageName, nomenclature, listDatabases, lrVersion)

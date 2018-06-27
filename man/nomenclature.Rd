@@ -5,16 +5,19 @@
 \alias{nomenclature,LRBaseDb-method}
 \alias{nomenclature}
 
-\title{A function to return the scientific name of package}
-\description{This function returns the scientific name of species used in the package.}
+\title{A function to return the scientific name}
+\description{This function returns the scientific name of
+species used in the package.}
 
 \usage{nomenclature(x)}
 
 \arguments{
 \item{x}{\code{LRBaseDb} object such as \code{LRBase.Mmu.eg.db}}
 }
+\value{
+The scientific name of organisms
+}
 \author{Koki Tsuyuzaki}
 \examples{
-# library("LRBase.Mmu.eg.db")
-# nomenclature(LRBase.Mmu.eg.db)
+showMethods("nomenclature")
 }
