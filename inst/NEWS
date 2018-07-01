@@ -1,3 +1,7 @@
+VERSION 0.99.1
+------------------------
+   o the vignette in inst/doc is removed
+
 VERSION 0.99.0
 ------------------------
    o Package released
