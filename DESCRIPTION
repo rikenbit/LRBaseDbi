@@ -1,7 +1,7 @@
 Package: LRBaseDbi
 Title: DBI to construct LRBase-related package
 Description: Interface to construct LRBase package (LRBase.XXX.eg.db).
-Version: 0.99.3
+Version: 0.99.4
 Author: Koki Tsuyuzaki
 Maintainer: Koki Tsuyuzaki <k.t.the-answer@hotmail.co.jp>
 Depends: R (>= 3.5.0)
