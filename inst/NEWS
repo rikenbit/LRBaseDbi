@@ -1,6 +1,6 @@
 VERSION 0.99.1
 ------------------------
-   o the vignette in inst/doc is removed
+   o the vignette files (.Rmd/.thml) in inst/doc are removed
 
 VERSION 0.99.0
 ------------------------
