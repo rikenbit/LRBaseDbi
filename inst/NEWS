@@ -1,18 +1,23 @@
+VERSION 0.99.5
+------------------------
+   o Added VignetteBuilder and VignetteEngine
+   o The vignette set as BiocStyle
+
 VERSION 0.99.4
 ------------------------
-   o the vignette files (.Rmd/.thml) in inst/doc are removed
+   o The vignette-related files (.Rmd/.html) in vignettes directory are moved to inst/doc direcotry
 
 VERSION 0.99.3
 ------------------------
-   o the vignette files (.Rmd/.thml) in inst/doc are removed
+   o The vignette-related files (.Rmd/.html) in inst/doc directory are removed
 
 VERSION 0.99.2
 ------------------------
-   o the vignette files (.Rmd/.thml) in inst/doc are removed
+   o The vignette-related files (.Rmd/.html) in inst/doc directory are removed
 
 VERSION 0.99.1
 ------------------------
-   o the vignette files (.Rmd/.thml) in inst/doc are removed
+   o The vignette-related files (.Rmd/.html) in inst/doc directory are removed
 
 VERSION 0.99.0
 ------------------------

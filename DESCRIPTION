@@ -1,11 +1,12 @@
 Package: LRBaseDbi
 Title: DBI to construct LRBase-related package
 Description: Interface to construct LRBase package (LRBase.XXX.eg.db).
-Version: 0.99.4
+Version: 0.99.5
 Author: Koki Tsuyuzaki
 Maintainer: Koki Tsuyuzaki <k.t.the-answer@hotmail.co.jp>
 Depends: R (>= 3.5.0)
 Imports: methods, stats, utils, AnnotationDbi, RSQLite, DBI, Biobase
-Suggests: RUnit, BiocGenerics
+Suggests: RUnit, BiocGenerics, BiocStyle
+VignetteBuilder: utils
 biocViews: Infrastructure
 License: Artistic-2.0
