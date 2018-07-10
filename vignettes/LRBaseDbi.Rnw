@@ -57,7 +57,9 @@ Here we use the demo data of LR-list of FANTOM5 project.
 \begin{center}
 <<echo=TRUE, print=TRUE, eval=TRUE>>=
 library('LRBaseDbi')
-example('makeLRBasePackage')
+if(interactive()){
+  example('makeLRBasePackage')
+}
 @
 \end{center}
 
@@ -66,9 +68,11 @@ Here, we will install the package.
 
 \begin{center}
 <<echo=TRUE, print=FALSE, eval=TRUE>>=
-filepath <- list.files(destination, full.names=TRUE)
-install.packages(filepath, repos=NULL, type='source')
-library('FANTOM5.Hsa.eg.db')
+if(interactive()){
+  filepath <- list.files(destination, full.names=TRUE)
+  install.packages(filepath, repos=NULL, type='source')
+  library('FANTOM5.Hsa.eg.db')
+}
 @
 \end{center}
 
@@ -79,11 +83,13 @@ Many data access function for this object are implmented. For example, columns r
 
 \begin{center}
 <<echo=TRUE, print=FALSE, eval=TRUE>>=
-columns(FANTOM5.Hsa.eg.db)
-keytypes(FANTOM5.Hsa.eg.db)
-key_FN5 <- keys(FANTOM5.Hsa.eg.db, keytype='GENEID_R')
-head(select(FANTOM5.Hsa.eg.db, keys=key_FN5[1:2],
-     columns=c('GENEID_L', 'GENEID_R'), keytype='GENEID_R'))
+if(interactive()){
+  columns(FANTOM5.Hsa.eg.db)
+  keytypes(FANTOM5.Hsa.eg.db)
+  key_FN5 <- keys(FANTOM5.Hsa.eg.db, keytype='GENEID_R')
+  head(select(FANTOM5.Hsa.eg.db, keys=key_FN5[1:2],
+       columns=c('GENEID_L', 'GENEID_R'), keytype='GENEID_R'))
+}
 @
 \end{center}
 
@@ -93,13 +99,15 @@ Other additional functions like species, nomenclature, and listDatabases are ava
 
 \begin{center}
 <<echo=TRUE, print=FALSE, eval=TRUE>>=
-species(FANTOM5.Hsa.eg.db)
-nomenclature(FANTOM5.Hsa.eg.db)
-listDatabases(FANTOM5.Hsa.eg.db)
-dbInfo(FANTOM5.Hsa.eg.db)
-dbfile(FANTOM5.Hsa.eg.db)
-dbschema(FANTOM5.Hsa.eg.db)
-dbconn(FANTOM5.Hsa.eg.db)
+if(interactive()){
+  species(FANTOM5.Hsa.eg.db)
+  nomenclature(FANTOM5.Hsa.eg.db)
+  listDatabases(FANTOM5.Hsa.eg.db)
+  dbInfo(FANTOM5.Hsa.eg.db)
+  dbfile(FANTOM5.Hsa.eg.db)
+  dbschema(FANTOM5.Hsa.eg.db)
+  dbconn(FANTOM5.Hsa.eg.db)
+}
 @
 \end{center}
 
