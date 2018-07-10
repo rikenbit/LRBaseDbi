@@ -1,3 +1,7 @@
+VERSION 0.99.10
+------------------------
+   o Removed inst/doc and added vignettes
+
 VERSION 0.99.9
 ------------------------
    o Removed vignettes

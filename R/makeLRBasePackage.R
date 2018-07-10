@@ -52,20 +52,23 @@ makeLRBasePackage <- function(pkgname, data, metadata, organism, version,
     # copy vignette
     dir.create(paste0(destDir, "/", pkgname, "/vignettes/"),
         showWarnings = FALSE, recursive = TRUE)
-    dir.create(paste0(destDir, "/", pkgname, "/inst/doc"),
-        showWarnings = FALSE, recursive = TRUE)
-    template_pdf <- paste0(system.file("doc", package = "LRBaseDbi"),
-        "/LRBaseDbi.pdf")
-    file.copy(from = template_pdf,
-        to = paste0(destDir, "/", pkgname, "/vignettes/", pkgname, ".pdf"),
-        overwrite=TRUE)
-    file.copy(from = template_pdf,
-        to = paste0(destDir, "/", pkgname, "/inst/doc/", pkgname, ".pdf"),
-        overwrite=TRUE)
+    # dir.create(paste0(destDir, "/", pkgname, "/inst/doc"),
+    #     showWarnings = FALSE, recursive = TRUE)
+    # template_pdf <- paste0(system.file("doc", package = "LRBaseDbi"),
+    #     "/LRBaseDbi.pdf")
+    # file.copy(from = template_pdf,
+    #     to = paste0(destDir, "/", pkgname, "/vignettes/", pkgname, ".pdf"),
+    #     overwrite=TRUE)
+    # file.copy(from = template_pdf,
+    #     to = paste0(destDir, "/", pkgname, "/inst/doc/", pkgname, ".pdf"),
+    #     overwrite=TRUE)
 
     template_rnw <- paste0(
         system.file("doc", package = "LRBaseDbi"),
         "/LRBaseDbi.Rnw")
+    # template_rnw <- paste0(
+    #     system.file("doc", package = "LRBaseDbi"),
+    #     "/LRBaseDbi.Rnw")
     new_rnw <- unlist(read.delim(template_rnw, header=FALSE))
     new_rnw <- gsub("LRBaseDbi", pkgname, new_rnw)
     sink(paste0(destDir, "/", pkgname, "/vignettes/", pkgname, ".Rnw"))
@@ -73,11 +76,11 @@ makeLRBasePackage <- function(pkgname, data, metadata, organism, version,
         cat(paste0(new_rnw[i], "\n"))
     }
     sink()
-    sink(paste0(destDir, "/", pkgname, "/inst/doc/", pkgname, ".Rnw"))
-    for(i in seq_along(new_rnw)){
-        cat(paste0(new_rnw[i], "\n"))
-    }
-    sink()
+    # sink(paste0(destDir, "/", pkgname, "/inst/doc/", pkgname, ".Rnw"))
+    # for(i in seq_along(new_rnw)){
+    #     cat(paste0(new_rnw[i], "\n"))
+    # }
+    # sink()
 
     ## move template to dest
     template_sqlite <- paste0(system.file("DBschemas", package = "LRBaseDbi"),
