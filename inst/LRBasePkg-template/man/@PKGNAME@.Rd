@@ -23,10 +23,13 @@ ks
 res <- select(@PKGNAME@, keys=ks, columns=cls, keytype=kt)
 head(res)
 
-dbconn(@PKGNAME@)
+species(@PKGNAME@)
+dbInfo(@PKGNAME@)
 dbfile(@PKGNAME@)
 dbschema(@PKGNAME@)
-dbInfo(@PKGNAME@)
-species(@PKGNAME@)
-nomenclature(@PKGNAME@)
+dbconn(@PKGNAME@)
+lrPackageName(@PKGNAME@)
+lrNomenclature(@PKGNAME@)
+lrListDatabases(@PKGNAME@)
+lrVersion(@PKGNAME@)
 }
