@@ -1,3 +1,19 @@
+VERSION 0.99.17
+------------------------
+   o Error is occured when the OS is windows?
+
+VERSION 0.99.16
+------------------------
+   o inst/LRBasePkg-template/man/@PKGNAME@.Rd is modified
+
+VERSION 0.99.15
+------------------------
+   o Reviewed
+
+VERSION 0.99.14
+------------------------
+   o vignette is modified
+
 VERSION 0.99.13
 ------------------------
    o vignette is modified
