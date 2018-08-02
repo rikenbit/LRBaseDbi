@@ -17,4 +17,4 @@ export(LRBaseDb)
 exportClasses(LRBaseDb)
 
 exportMethods(columns, keytypes, keys, select, dbconn, dbfile, dbschema,
-    dbInfo, species, packageName, nomenclature, listDatabases, lrVersion)
+    dbInfo, species, lrPackageName, lrNomenclature, lrListDatabases, lrVersion)

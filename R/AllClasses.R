@@ -2,8 +2,6 @@
 ## Definition of Classes
 ##
 
-require("methods", quietly = TRUE)
-
 # Reference class
 .LRBaseDb <- setRefClass("LRBaseDb", contains="AnnotationDb")
 

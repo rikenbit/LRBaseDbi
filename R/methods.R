@@ -3,12 +3,11 @@
 ##
 
 ## helper for vector dividing
-.div <- function(x,d=1) {
-    y <- list()
+.div <- function(x, d=1) {
     delta <- ceiling(length(x) / d)
-    for(i in seq_along(d)){
-        y[[i]] <- as.vector(na.omit(x[((i-1)*delta+1):(i*delta)]))
-    }
+    y <- lapply(seq_len(d), function(i){
+        as.vector(na.omit(x[((i-1)*delta+1):(i*delta)]))
+    })
     return(y)
 }
 
@@ -55,38 +54,25 @@ setMethod("keys",
 setMethod("select",
     "LRBaseDb",
     function(x, keys, columns, keytype){
-        if (length(columns) > 1) {
-        c <- columns[1]
-        for (i in 2:(length(columns))){
-            c <- paste(c, columns[i], sep = ",")
-        }
-        }else{
-            c <- columns
-        }
-
+        c <- paste(columns, collapse=",")
         keys <- paste0('"', keys, '"')
         ke <- paste(keytype, keys, sep ="=")
         kee <- c()
-        if(length(ke) > 1){
-            if(length(ke) >= 1000) {
-                ke_loc <- .div(seq_along(ke), ceiling(length(keys)/500))
-                for(j in seq_along(ceiling(length(keys)/500))){
-                    kee[j] <- paste(ke[ke_loc[[j]]], sep="",collapse=" OR ")
-                }
-            }else{
-                kee <- paste(ke, sep="", collapse=" OR ")
+        if(length(ke) >= 1000) {
+            ke_loc <- .div(seq_along(ke), ceiling(length(keys)/500))
+            for(j in seq_len(ceiling(length(keys)/500))){
+                kee[j] <- paste(ke[ke_loc[[j]]], sep="",collapse=" OR ")
             }
         }else{
-            kee <- ke
+            kee <- paste(ke, sep="", collapse=" OR ")
         }
 
         # SQLs
-        kk <- c()
-        for(i in seq_along(kee)){
-            query <- paste0("SELECT ", c, " FROM DATA WHERE ", kee[i])
-            k <- dbGetQuery(x$conn, query)
-            kk <- rbind(kk, k)
-        }
+        kk <- lapply(kee, function(i) {
+            query <- paste0("SELECT ", c, " FROM DATA WHERE ", i)
+            dbGetQuery(x$conn, query)
+        })
+        kk <- do.call(rbind, kk)
         return(unique(kk))
     }
 )
@@ -138,16 +124,16 @@ setMethod("species",
     }
 )
 
-## packageName
-setMethod("packageName",
+## lrPackageName
+setMethod("lrPackageName",
     "LRBaseDb",
     function(x){
         return(x$packageName)
     }
 )
 
-## nomenclature
-setMethod("nomenclature",
+## lrNomenclature
+setMethod("lrNomenclature",
     "LRBaseDb",
     function(x) {
         return(dbGetQuery(x$conn,
@@ -155,8 +141,8 @@ setMethod("nomenclature",
     }
 )
 
-## listDatabases
-setMethod("listDatabases",
+## lrListDatabases
+setMethod("lrListDatabases",
     "LRBaseDb",
     function(x) {
         return(dbGetQuery(x$conn, 'SELECT DISTINCT SOURCEDB FROM DATA;'))
