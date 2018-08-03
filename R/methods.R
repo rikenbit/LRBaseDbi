@@ -57,12 +57,12 @@ setMethod("select",
         c <- paste(columns, collapse=",")
         keys <- paste0('"', keys, '"')
         ke <- paste(keytype, keys, sep ="=")
-        kee <- c()
         if(length(ke) >= 1000) {
-            ke_loc <- .div(seq_along(ke), ceiling(length(keys)/500))
-            for(j in seq_len(ceiling(length(keys)/500))){
-                kee[j] <- paste(ke[ke_loc[[j]]], sep="",collapse=" OR ")
-            }
+            no.chunk <- ceiling(length(keys)/500)
+            ke_loc <- .div(seq_along(ke), no.chunk)
+            kee <- lapply(ke_loc, function(x){
+                paste(ke[x], collapse=" OR ")
+                })
         }else{
             kee <- paste(ke, sep="", collapse=" OR ")
         }
