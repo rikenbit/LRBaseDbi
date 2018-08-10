@@ -62,8 +62,8 @@ metaFANTOM5
 
 ## sets up a temporary directory for this example
 ## (users won't need to do this step)
-destination <- tempfile()
-dir.create(destination)
+tmp <- tempfile()
+dir.create(tmp)
 
 ## makes an Organism package for human called Homo.sapiens
 makeLRBasePackage(pkgname = "FANTOM5.Hsa.eg.db",
@@ -73,6 +73,6 @@ makeLRBasePackage(pkgname = "FANTOM5.Hsa.eg.db",
     version = "0.99.0",
     maintainer = "Koki Tsuyuzaki <k.t.the-answer@hotmail.co.jp>",
     author = "Koki Tsuyuzaki",
-    destDir = destination,
+    destDir = tmp,
     license="Artistic-2.0")
 }
