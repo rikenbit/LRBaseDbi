@@ -50,11 +50,22 @@ makeLRBasePackage <- function(pkgname, data, metadata, organism, version,
     )
 
     # copy vignette
+    .pathRmd <- function(){
+        LIBPATHS = .libPaths()
+        LRPATH = sapply(LIBPATHS, function(x){
+            file.exists(paste0(x, "/LRBaseDbi/doc/LRBaseDbi.Rnw"))
+        })
+        LRPATH = names(LRPATH[which(LRPATH)])
+        if(length(LRPATH) != 0){
+            paste0(LRPATH[1], "/LRBaseDbi/doc/LRBaseDbi.Rnw")
+        }else{
+            stop("The library path is not found!\n")
+        }
+    }
+
     dir.create(paste0(destDir, "/", pkgname, "/vignettes/"),
         showWarnings = FALSE, recursive = TRUE)
-    template_rnw <- paste0(
-        system.file("doc", package = "LRBaseDbi"),
-        "/LRBaseDbi.Rnw")
+    template_rnw <- .pathRmd()
     new_rnw <- unlist(read.delim(template_rnw, header=FALSE))
     new_rnw <- gsub("LRBaseDbi", pkgname, new_rnw)
     sink(paste0(destDir, "/", pkgname, "/vignettes/", pkgname, ".Rnw"))

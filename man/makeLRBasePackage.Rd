@@ -51,28 +51,30 @@ makeLRBasePackage(pkgname, data, metadata, organism, version,
 }
 
 \examples{
-## makeLRBasePackage enable users to construct
-## user's own custom LRBase package
-data(FANTOM5)
-head(FANTOM5)
+if(interactive()){
+    ## makeLRBasePackage enable users to construct
+    ## user's own custom LRBase package
+    data(FANTOM5)
+    head(FANTOM5)
 
-# We are also needed to prepare meta data as follows.
-data(metaFANTOM5)
-metaFANTOM5
+    # We are also needed to prepare meta data as follows.
+    data(metaFANTOM5)
+    metaFANTOM5
 
-## sets up a temporary directory for this example
-## (users won't need to do this step)
-tmp <- tempfile()
-dir.create(tmp)
+    ## sets up a temporary directory for this example
+    ## (users won't need to do this step)
+    tmp <- tempfile()
+    dir.create(tmp)
 
-## makes an Organism package for human called Homo.sapiens
-makeLRBasePackage(pkgname = "FANTOM5.Hsa.eg.db",
-    data = FANTOM5,
-    metadata = metaFANTOM5,
-    organism = "Homo sapiens",
-    version = "0.99.0",
-    maintainer = "Koki Tsuyuzaki <k.t.the-answer@hotmail.co.jp>",
-    author = "Koki Tsuyuzaki",
-    destDir = tmp,
-    license="Artistic-2.0")
+    ## makes an Organism package for human called Homo.sapiens
+    makeLRBasePackage(pkgname = "FANTOM5.Hsa.eg.db",
+        data = FANTOM5,
+        metadata = metaFANTOM5,
+        organism = "Homo sapiens",
+        version = "0.99.0",
+        maintainer = "Koki Tsuyuzaki <k.t.the-answer@hotmail.co.jp>",
+        author = "Koki Tsuyuzaki",
+        destDir = tmp,
+        license="Artistic-2.0")
+}
 }
