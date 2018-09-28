@@ -51,7 +51,7 @@ The makeLRBasePackage function of LRBaseDbi generates the user's original LRBase
 \section{makeLRBasePackage}
 
 Here we use makeLRBasePackage function to create a LRBase.XXX.eg.db-type package.
-Only user have to specify are 1. a LR-list containing the columns "GENEID$\_$L" (ligand NCBI Gene IDs) and "GENEID$\_$R" (receptor NCBI Gene IDs) and 2. a meta information table describing the LR-list. 
+Only user have to specify are 1. a LR-list containing the columns "GENEID$\_$L" (ligand NCBI Gene IDs) and "GENEID$\_$R" (receptor NCBI Gene IDs) and 2. a meta information table describing the LR-list.
 Here we use the demo data of LR-list of FANTOM5 project.
 
 \begin{center}
@@ -119,25 +119,27 @@ Description for any LRBase-related packages is written in the vignette of
 
 \noindent
 Please follow the link below
-\newline\newline
+\newline
 \url{http://www.bioconductor.org/packages/release/bioc/html/scTensor.html}
-\newline\newline
+\newline
 \noindent
 or just type
-\newline\newline
+\newline
 \noindent
-> source('http://bioconductor.org/biocLite.R')
 
-\noindent
-> biocLite('scTensor')
+\begin{center}
+<<echo=TRUE, print=FALSE, eval=TRUE>>=
+if(interactive()){
+  if (!requireNamespace('BiocManager', quietly = TRUE)){
+    install.packages('BiocManager')
+  }
+  BiocManager::install('scTensor')
+  library('scTensor')
+  vignette('scTensor')
+}
+@
+\end{center}
 
-\noindent
-> library('scTensor')
-
-\noindent
-> vignette('scTensor')
-\newline\newline
-\noindent
 in R console window.
 
 \end{document}

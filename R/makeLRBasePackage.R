@@ -66,7 +66,7 @@ makeLRBasePackage <- function(pkgname, data, metadata, organism, version,
     dir.create(paste0(destDir, "/", pkgname, "/vignettes/"),
         showWarnings = FALSE, recursive = TRUE)
     template_rnw <- .pathRmd()
-    new_rnw <- unlist(read.delim(template_rnw, header=FALSE))
+    new_rnw <- unlist(read.delim(template_rnw, header=FALSE, stringsAsFactor=FALSE))
     new_rnw <- gsub("LRBaseDbi", pkgname, new_rnw)
     sink(paste0(destDir, "/", pkgname, "/vignettes/", pkgname, ".Rnw"))
     for(i in seq_along(new_rnw)){
