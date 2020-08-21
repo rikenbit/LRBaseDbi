@@ -2,8 +2,11 @@
 ## This is for constracting original LRBase.XXX.eg.db packages by end-users
 ##
 
-makeLRBasePackage <- function(pkgname, data, metadata, organism, version,
-    maintainer, author, destDir, license="Artistic-2.0"){
+makeLRBasePackage <- function(pkgname, data, metadata, organism,
+    pkgtitle="An annotation package for the LRBaseDb object",
+    pkgdescription=paste("Contains the LRBaseDb object",
+            "to access data from several related annotation packages."),
+    version, maintainer, author, destDir, license="Artistic-2.0"){
 
     # Validate of data
     .validateColNames1(data)
@@ -15,15 +18,14 @@ makeLRBasePackage <- function(pkgname, data, metadata, organism, version,
     ## We need to define some symbols in order to have the
     ## template filled out correctly.
     symvals <- list(
-        PKGTITLE=paste("An annotation package for the LRBaseDb object"),
-        PKGDESCRIPTION=paste("Contains the LRBaseDb object",
-            "to access data from several related annotation packages."),
+        PKGTITLE=pkgtitle,
+        PKGDESCRIPTION=pkgdescription,
         PKGVERSION=version,
         AUTHOR=author,
         MAINTAINER=maintainer,
         LIC=license,
         ORGANISM=organism,
-        ORGANISMBIOCVIEW=gsub(" ","_",organism),
+        ORGANISMBIOCVIEW=gsub(" ", "_", organism),
         PKGNAME=pkgname
     )
 

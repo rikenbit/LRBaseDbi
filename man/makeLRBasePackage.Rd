@@ -10,8 +10,11 @@
     will in turn point to existing annotation packages.
 }
 \usage{
-makeLRBasePackage(pkgname, data, metadata, organism, version,
-    maintainer, author, destDir, license="Artistic-2.0")
+makeLRBasePackage(pkgname, data, metadata, organism,
+    pkgtitle="An annotation package for the LRBaseDb object",
+    pkgdescription=paste("Contains the LRBaseDb object",
+            "to access data from several related annotation packages."),
+    version, maintainer, author, destDir, license="Artistic-2.0")
 }
 \arguments{
     \item{pkgname}{The package name. We highly recommend that the name
@@ -22,6 +25,8 @@ makeLRBasePackage(pkgname, data, metadata, organism, version,
     and SOURCEDB (e.g., FANTOM5)}
     \item{metadata}{Data frame contains metadata of the package}
     \item{organism}{The name of the organism this package represents}
+    \item{pkgtitle}{The title of this package written in DESCRIPTION file}
+    \item{pkgdescription}{The description of this package written in DESCRIPTION file}
     \item{version}{The version number of this package}
     \item{maintainer}{The maintainer who creates the package
     (must include email to be valid)}
@@ -71,6 +76,9 @@ if(interactive()){
         data = FANTOM5,
         metadata = metaFANTOM5,
         organism = "Homo sapiens",
+        pkgtitle="An annotation package for the LRBaseDb object",
+        pkgdescription=paste("Contains the LRBaseDb object",
+                "to access data from several related annotation packages."),
         version = "0.99.0",
         maintainer = "Koki Tsuyuzaki <k.t.the-answer@hotmail.co.jp>",
         author = "Koki Tsuyuzaki",

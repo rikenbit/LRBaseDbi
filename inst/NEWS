@@ -1,10 +1,14 @@
+VERSION 1.7.1
+------------------------
+   o pkgtitle and pkgdescription options were added in makeLRBasePackages
+
 VERSION 0.99.17
 ------------------------
    o Error is occured when the OS is windows?
 
 VERSION 0.99.16
 ------------------------
-   o inst/LRBasePkg-template/man/@PKGNAME@.Rd is modified
+   o inst/LRBasePkg-template/man/@PKGNAME@.Rd was modified
 
 VERSION 0.99.15
 ------------------------
@@ -12,19 +16,19 @@ VERSION 0.99.15
 
 VERSION 0.99.14
 ------------------------
-   o vignette is modified
+   o vignette was modified
 
 VERSION 0.99.13
 ------------------------
-   o vignette is modified
+   o vignette was modified
 
 VERSION 0.99.12
 ------------------------
-   o vignette is modified
+   o vignette was modified
 
 VERSION 0.99.11
 ------------------------
-   o vignette is modified
+   o vignette was modified
 
 VERSION 0.99.10
 ------------------------
@@ -53,19 +57,19 @@ VERSION 0.99.5
 
 VERSION 0.99.4
 ------------------------
-   o The vignette-related files (.Rmd/.html) in vignettes directory are moved to inst/doc direcotry
+   o The vignette-related files (.Rmd/.html) in vignettes directory were moved to inst/doc direcotry
 
 VERSION 0.99.3
 ------------------------
-   o The vignette-related files (.Rmd/.html) in inst/doc directory are removed
+   o The vignette-related files (.Rmd/.html) in inst/doc directory were removed
 
 VERSION 0.99.2
 ------------------------
-   o The vignette-related files (.Rmd/.html) in inst/doc directory are removed
+   o The vignette-related files (.Rmd/.html) in inst/doc directory were removed
 
 VERSION 0.99.1
 ------------------------
-   o The vignette-related files (.Rmd/.html) in inst/doc directory are removed
+   o The vignette-related files (.Rmd/.html) in inst/doc directory were removed
 
 VERSION 0.99.0
 ------------------------
