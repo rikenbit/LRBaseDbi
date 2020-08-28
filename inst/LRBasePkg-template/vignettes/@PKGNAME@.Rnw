@@ -1,5 +1,5 @@
 %\VignetteEngine{utils::Sweave}
-%\VignetteIndexEntry{LRBaseDbi}
+%\VignetteIndexEntry{@PKGNAME@}
 
 \documentclass[11pt,a4paper,english,arial,twoside]{article}
 
