@@ -1,6 +1,10 @@
-VERSION 1.7.1
+VERSION 2.0.0
 ------------------------
    o pkgtitle and pkgdescription options were added in makeLRBasePackages
+
+VERSION 1.0.0
+------------------------
+   o Package released
 
 VERSION 0.99.17
 ------------------------
