@@ -18,8 +18,8 @@ setMethod("show",
         print(class(object))
         print("##### connection #####")
         print(object$conn)
-        print("##### package name #####")
-        print(object$packageName)
+        print("##### sqlite file #####")
+        print(object$dbfile)
     }
 )
 
@@ -90,12 +90,7 @@ setMethod("dbconn",
 setMethod("dbfile",
     "LRBaseDb",
     function(x){
-        return(
-            paste0(
-                system.file(c("inst", "extdata"), package=x$packageName),
-                paste0("/", x$packageName, ".sqlite")
-            )
-        )
+      return(x$dbfile)
     }
 )
 
@@ -121,14 +116,6 @@ setMethod("species",
     function(object) {
         return(dbGetQuery(object$conn,
             'SELECT value FROM METADATA where name = "SPECIES";')[1,])
-    }
-)
-
-## lrPackageName
-setMethod("lrPackageName",
-    "LRBaseDb",
-    function(x){
-        return(x$packageName)
     }
 )
 

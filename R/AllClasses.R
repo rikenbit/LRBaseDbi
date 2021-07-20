@@ -3,18 +3,19 @@
 ##
 
 # Reference class
-.LRBaseDb <- setRefClass("LRBaseDb", contains="AnnotationDb")
+.LRBaseDb <- setRefClass("LRBaseDb",
+    contains="AnnotationDb",
+    fields=list(
+      conn="SQLiteConnection",
+      dbfile="character"))
 
 ## Constructor
-LRBaseDb <- function(pkgname){
+LRBaseDb <- function(dbfile){
     ## Inherit class, Instantiation
     .dbconn <- dbConnect(
         SQLite(),
-        paste0(
-            system.file(c("inst", "extdata"), package=pkgname),
-            paste0("/", pkgname, ".sqlite")
-        )
+        dbfile
     )
-    obj <- .LRBaseDb$new(conn=.dbconn, packageName=pkgname)
+    obj <- .LRBaseDb$new(conn=.dbconn, dbfile=dbfile)
     return(obj)
 }

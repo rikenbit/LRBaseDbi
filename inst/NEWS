@@ -1,3 +1,11 @@
+VERSION 2.4.0
+------------------------
+   o LRBase.XXX.eg.db-type annotation packages for organisms were deprecated.
+   o The distribution of each SQLite file has been changed to the AnnotationHub-style.
+   o By using LRBaseDbi, we can convert SQLite files acquired by the AnnotationHub's query function into LRBase objects, which can then be used for analysis using LRBase.XXX.eg.db as before.
+   o makeLRBasePackage function was deprecated.
+   o .loadLRBaseDbiPkg was deprecated.
+
 VERSION 2.0.0
 ------------------------
    o pkgtitle and pkgdescription options were added in makeLRBasePackages

@@ -1,20 +1,19 @@
 import(methods)
 import(Biobase)
 
+importClassesFrom(AnnotationDbi, AnnotationDb)
+
 importFrom(utils, read.delim)
 importFrom(stats, na.omit)
 importFrom(RSQLite, SQLite, dbConnect, dbWriteTable, dbDisconnect)
-
-importClassesFrom(AnnotationDbi, AnnotationDb)
 
 importMethodsFrom(DBI, dbGetQuery)
 importMethodsFrom(AnnotationDbi, columns, keytypes, keys, select,
     dbconn, dbfile, dbschema, dbInfo, species)
 
-export(makeLRBasePackage)
 export(LRBaseDb)
 
 exportClasses(LRBaseDb)
 
 exportMethods(columns, keytypes, keys, select, dbconn, dbfile, dbschema,
-    dbInfo, species, lrPackageName, lrNomenclature, lrListDatabases, lrVersion)
+    dbInfo, species, lrNomenclature, lrListDatabases, lrVersion)
