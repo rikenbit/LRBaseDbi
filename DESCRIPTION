@@ -6,7 +6,7 @@ Author: Koki Tsuyuzaki
 Maintainer: Koki Tsuyuzaki <k.t.the-answer@hotmail.co.jp>
 Depends: R (>= 3.5.0)
 Imports: methods, stats, utils, AnnotationDbi, RSQLite, DBI, Biobase
-Suggests: testthat, BiocGenerics, BiocStyle
+Suggests: testthat, BiocStyle
 VignetteBuilder: utils
 biocViews: Infrastructure
 License: Artistic-2.0
