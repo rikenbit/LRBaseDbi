@@ -54,7 +54,7 @@ To use LRBaseDbi, type as follows.
 library("LRBaseDbi")
 library("AnnotationHub")
 ah <- AnnotationHub()
-dbfile <- query(ah, c("LRBaseDb", "Sus scrofa", "v001"))[[1]]
+dbfile <- query(ah, c("LRBaseDb", "Sus scrofa"))[[1]]
 
 # Constructor
 LRBase.Ssc.eg.db <- LRBaseDbi::LRBaseDb(dbfile)
